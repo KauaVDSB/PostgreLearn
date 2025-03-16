@@ -10,8 +10,7 @@ def create_app():
 
     # Configuração da URI do banco de dados
     DATABASE_URL = os.getenv(
-        "DATABASE_URL",  # Busca a URI das variáveis de ambiente
-        "postgresql://postgres.purmdymrfnuumweewhny:K1608h.database_nexti@aws-0-sa-east-1.pooler.supabase.com:6543/postgres"
+        "DATABASE_URL"  # Busca a URI das variáveis de ambiente
     )
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
