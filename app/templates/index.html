@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Supabase Example</title>
+</head>
+<body>
+    <h1>Usuários</h1>
+    <ul>
+        {% for user in users %}
+        <li>
+            {{ user.nome }} ({{ user.email }})
+            <a href="{{ url_for('main.delete_user', user_id=user.id) }}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('main.add_user') }}" method="POST">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
